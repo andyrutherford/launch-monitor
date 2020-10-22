@@ -18,7 +18,6 @@ const Launches = () => {
   const renderLaunches = ({ loading, error, data }) => {
     if (loading) return <h4>Loading...</h4>;
     if (error) return <p>{error.message}</p>;
-    console.log(data);
     return data.launches.map((launch, idx) => (
       <LaunchItem key={idx} launch={launch} />
     ));
