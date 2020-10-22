@@ -8,7 +8,10 @@ import Launch from './components/Launch';
 import rocket from './assets/rocket.svg';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri:
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:5000/graphql'
+      : '/graphql',
 });
 
 function App() {
